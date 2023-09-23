@@ -1,0 +1,32 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres # Nome de usuário do PostgreSQL
+      POSTGRES_PASSWORD: 1234 # Senha do PostgreSQL
+      POSTGRES_DB: meu_db # Nome do banco de dados a ser criado
+    ports:
+      - "5432:5432" # Mapeia a porta do PostgreSQL
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Volume para persistência de dados do PostgreSQL
+      - ./cria_tabela_tarefas.sql:/docker-entrypoint-initdb.d/cria_tabela_tarefas.sql # Monta o arquivo SQL como um script de inicialização
+    networks:
+      - my-network
+
+  app:
+    build:
+      context: . # Diretório da sua aplicação PHP
+      dockerfile: dockerfile # Dockerfile da sua aplicação PHP (se aplicável)
+    ports:
+      - "80:80" # Porta em que a aplicação será acessível
+    depends_on:
+      - db # Dependência para garantir que o banco de dados esteja pronto antes de iniciar o aplicativo
+    networks:
+      - my-network
+
+volumes:
+  postgres_data: # Volume para persistência de dados do PostgreSQL
+
+networks:
+  my-network: # Rede personalizada para comunicação entre contêineres
