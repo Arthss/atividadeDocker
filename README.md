@@ -14,26 +14,28 @@ Antes de iniciar, certifique-se de que você tenha instalado os seguintes compon
 Siga as etapas abaixo para executar a aplicação em seu ambiente local:
 
 1. Clone este repositório em sua máquina:
-
+   
+   ```bash
    git clone https://github.com/Arthss/atividadeDocker.git
    cd ToDoList
 
-2. Dentro da pasta raiz do projeto, execute o comando abaixo para montar as imagens, containers, volumes e redes do docker:
+1. Dentro da pasta raiz do projeto, execute o comando abaixo para montar as imagens, containers, volumes e redes do docker:
 
+   ```bash
    docker-compose up -d
 
-3. O comando acima já inicia a aplicação quando finalizado, acesse sua aplicação por meio do http://localhost:80 na porta 80
+2. O comando acima já inicia a aplicação quando finalizado, acesse sua aplicação por meio do http://localhost:80 na porta 80
 
 ## Estrutura do Projeto
 
-   A estrutura de diretórios deste projeto é organizada da seguinte forma:
-   
-   ToDoList/: Contém o código-fonte da aplicação PHP.
-   Assets/: Contém a pasta para os arquivos JS e CSS usados pela aplicação além da pasta dos Ícones.
-   cria_tabela_tarefas.sql/: Contém o script SQL para a criação da tabela tarefas no banco de dados PostgreSQL que é usada pela aplicação.
-   ToDoList/dockerfile/: Define a montagem da imagem docker da aplicação ToDoList
-   ToDoList/docker-compose.yml: Define a configuração do ambiente Docker.
-   README.md: Este arquivo README.
+A estrutura de diretórios deste projeto é organizada da seguinte forma:
+
+1. ToDoList/: Contém o código-fonte da aplicação PHP.
+2. Assets/: Contém a pasta para os arquivos JS e CSS usados pela aplicação além da pasta dos Ícones.
+3. cria_tabela_tarefas.sql/: Contém o script SQL para a criação da tabela tarefas no banco de dados PostgreSQL que é usada pela aplicação.
+4. ToDoList/dockerfile/: Define a montagem da imagem docker da aplicação ToDoList
+5. ToDoList/docker-compose.yml: Define a configuração do ambiente Docker.
+6. README.md: Este arquivo README.
 
 ## Referências
 
