@@ -1,23 +1,22 @@
-# Use a imagem oficial do PHP com Apache
+# Usa a imagem oficial do PHP com Apache
 FROM php:7.4-apache
 
-# Atualize o sistema e instale as dependências necessárias
+# Atualiza o sistema e instala as dependências necessárias
 RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Habilite a extensão PostgreSQL
+# Habilita a extensão PostgreSQL para conexão da aplicação com o banco
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pgsql pdo_pgsql
 
-# Copie os arquivos da sua aplicação para o diretório de trabalho no contêiner
 COPY . /var/www/html
 
-# Habilite o módulo de reescrita do Apache (se necessário)
+# Habilita o módulo de reescrita do Apache (se necessário)
 RUN a2enmod rewrite
 
-# Exponha a porta 80 para acessar a aplicação
+# Define a porta 80 para acessar a aplicação
 EXPOSE 80
 
-# Inicialize o Apache em primeiro plano (substitua este comando pelo comando de inicialização do seu servidor web, se necessário)
+# Inicializa o Apache em primeiro plano
 CMD ["apache2-foreground"]
