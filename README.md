@@ -42,8 +42,3 @@ Siga as etapas abaixo para executar a aplicação em seu ambiente local:
 1. Utilizado o exemplo 4 do site https://mdbootstrap.com/docs/standard/extended/to-do-list como inspiração para o front da aplicação
 2. A aplicação e a integração com o docker feitas com a ajuda do Chat GPT e consulta a documentação do Docker e seus fóruns
 3. Os ícones utilizados na aplicação foram retirados do site https://icons8.com.br/icons
-
-   Utilizamos o exemplo 4 do site MDBootstrap como inspiração para o design da aplicação.
-A aplicação e a integração com o Docker foram desenvolvidas com o auxílio do Chat GPT e consultas à documentação do Docker e seus fóruns.
-Os ícones utilizados na aplicação foram obtidos no site Icons8.
-
