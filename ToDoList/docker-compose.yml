@@ -10,14 +10,14 @@ services:
       - "5432:5432" # Mapeia a porta do PostgreSQL
     volumes:
       - postgres_data:/var/lib/postgresql/data # Volume para persistência de dados do PostgreSQL
-      - ./cria_tabela_tarefas.sql:/docker-entrypoint-initdb.d/cria_tabela_tarefas.sql # Monta o arquivo SQL como um script de inicialização
+      - ./cria_tabela_tarefas.sql:/docker-entrypoint-initdb.d/cria_tabela_tarefas.sql # Monta o arquivo SQL como um script de inicialização que cria a tabela de tarefas no banco
     networks:
       - my-network
 
   app:
     build:
       context: . # Diretório da sua aplicação PHP
-      dockerfile: dockerfile # Dockerfile da sua aplicação PHP (se aplicável)
+      dockerfile: dockerfile # Dockerfile da sua aplicação PHP
     ports:
       - "80:80" # Porta em que a aplicação será acessível
     depends_on:
