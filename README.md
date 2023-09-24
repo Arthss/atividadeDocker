@@ -19,12 +19,12 @@ Siga as etapas abaixo para executar a aplicação em seu ambiente local:
    git clone https://github.com/Arthss/atividadeDocker.git
    cd ToDoList
 
-1. Dentro da pasta raiz do projeto, execute o comando abaixo para montar as imagens, containers, volumes e redes do docker:
+2. Dentro da pasta raiz do projeto, execute o comando abaixo para montar as imagens, containers, volumes e redes do docker:
 
    ```bash
    docker-compose up -d
 
-2. O comando acima já inicia a aplicação quando finalizado, acesse sua aplicação por meio do http://localhost:80 na porta 80
+3. Acesse sua aplicação por meio do http://localhost:80
 
 ## Estrutura do Projeto
 
